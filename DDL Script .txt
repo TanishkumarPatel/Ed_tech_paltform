@@ -1,0 +1,122 @@
+CREATE SCHEMA ONLINEEd;
+SET search_path TO ONLINEEd;
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    first_name VARCHAR(500),
+    last_name VARCHAR(500),
+    email VARCHAR(500) UNIQUE,
+    phone VARCHAR(500)
+);
+
+CREATE TABLE students (
+    phone_no VARCHAR(500) PRIMARY KEY,
+    user_id INTEGER,
+    stream VARCHAR(500),
+    city VARCHAR(500),
+    state VARCHAR(500),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE faculty (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER,
+    name VARCHAR(500),
+    qualification VARCHAR(500),
+    email VARCHAR(500) UNIQUE,
+    phone VARCHAR(500),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE courses (
+    name VARCHAR(500) PRIMARY KEY,
+    start_date DATE,
+    end_date DATE,
+    price DECIMAL(10,2),
+    exam_type VARCHAR(500)
+);
+
+CREATE TABLE enrollment (
+    id INTEGER PRIMARY KEY,
+    course_name VARCHAR(500),
+    enrollment_date DATE,
+    phone VARCHAR(500),
+    FOREIGN KEY (course_name) REFERENCES courses(name),
+    FOREIGN KEY (phone) REFERENCES students(phone_no)
+);
+
+CREATE TABLE tests (
+    name VARCHAR(500) PRIMARY KEY,
+    duration INTEGER,
+    total_marks INTEGER,
+    course_name VARCHAR(500),
+    FOREIGN KEY (course_name) REFERENCES courses(name)
+);
+
+CREATE TABLE questions (
+    id INTEGER PRIMARY KEY,
+    description VARCHAR(500),
+    type VARCHAR(500),
+    marks INTEGER,
+    test_name VARCHAR(500),
+    FOREIGN KEY (test_name) REFERENCES tests(name)
+);
+
+CREATE TABLE answers (
+    id INTEGER PRIMARY KEY,
+    text VARCHAR(500), 
+    is_correct BOOLEAN,
+    question_id INTEGER,
+    phone VARCHAR(500),
+    FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
+CREATE TABLE subjects (
+    name VARCHAR(500) PRIMARY KEY
+);
+
+CREATE TABLE lectures (
+    name VARCHAR(500) PRIMARY KEY,
+    duration INTEGER,
+    release_date DATE,
+    content VARCHAR(500),
+    course_name VARCHAR(500),
+    FOREIGN KEY (course_name) REFERENCES courses(name)
+);
+
+CREATE TABLE study_material (
+    name VARCHAR(500) PRIMARY KEY,
+    type VARCHAR(500),
+    course_name VARCHAR(500),
+    subject_name VARCHAR(500),
+    FOREIGN KEY (course_name) REFERENCES courses(name),
+    FOREIGN KEY (subject_name) REFERENCES subjects(name)
+);
+
+CREATE TABLE doubt_panel (
+    id INTEGER PRIMARY KEY,
+    phone_no VARCHAR(500),
+    course_name VARCHAR(500),
+    subject_name VARCHAR(500),
+    question_id INTEGER,
+    FOREIGN KEY (phone_no) REFERENCES students(phone_no),
+    FOREIGN KEY (course_name) REFERENCES courses(name),
+    FOREIGN KEY (subject_name) REFERENCES subjects(name),
+    FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
+CREATE TABLE course_faculty (
+    course_name VARCHAR(500),
+    faculty_id INTEGER,
+    PRIMARY KEY (course_name, faculty_id),
+    FOREIGN KEY (course_name) REFERENCES courses(name),
+    FOREIGN KEY (faculty_id) REFERENCES faculty(id)
+);
+
+CREATE TABLE course_subject (
+    subject_name VARCHAR(500),
+    course_name VARCHAR(500),
+    PRIMARY KEY (subject_name, course_name),
+    FOREIGN KEY (course_name) REFERENCES courses(name),
+    FOREIGN KEY (subject_name) REFERENCES subjects(name)
+);
