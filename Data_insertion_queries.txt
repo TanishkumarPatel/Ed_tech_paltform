@@ -1,0 +1,201 @@
+﻿Insert Queries
+
+-- INSERT INTO users
+INSERT INTO users (id, first_name, last_name, email, phone) VALUES
+ (1, 'Rohan', 'Sharma', 'rohan@example.com', '9876543210'),
+ (2, 'Amit', 'Singh', 'amit@example.com', '9876543211'),
+ (3, 'Sachin', 'Kumar', 'sachin@example.com', '9876543212'),
+ (4, 'Rahul', 'Jain', 'rahul@example.com', '9876543213'),
+ (5, 'Priya', 'Gupta', 'priya@example.com', '9876543214'),
+ (6, 'Riya', 'Sharma', 'riya@example.com', '9876543215'),
+ (7, 'Vivek', 'Kumar', 'vivek@example.com', '9876543216'),
+ (8, 'Ramesh', 'Kumar', 'ramesh@example.com', '9876543217'),
+ (9, 'Suresh', 'Singh', 'suresh@example.com', '9876543218'),
+ (10, 'Kumar', 'Sharma', 'kumar@example.com', '9876543219'),
+ (11, 'Verma', 'Jain', 'verma@example.com', '9876543220'),
+ (12, 'Sharma', 'Gupta', 'sharma@example.com', '9876543221'),
+ (13, 'Jain', 'Kumar', 'jain@example.com', '9876543222'),
+ (14, 'Gupta', 'Singh', 'gupta@example.com', '9876543223');
+
+-- INSERT INTO students
+INSERT INTO students (phone_no, user_id, stream, city, state) VALUES
+ ('9876543210', 1, 'Science', 'Delhi', 'Delhi'),
+ ('9876543211', 2, 'Commerce', 'Mumbai', 'Maharashtra'),
+ ('9876543212', 3, 'Arts', 'Kolkata', 'West Bengal'),
+ ('9876543213', 4, 'Science', 'Chennai', 'Tamil Nadu'),
+ ('9876543214', 5, 'Commerce', 'Hyderabad', 'Telangana'),
+ ('9876543215', 6, 'Arts', 'Bangalore', 'Karnataka'),
+ ('9876543216', 7, 'Science', 'Pune', 'Maharashtra');
+
+-- INSERT INTO faculty
+INSERT INTO faculty (id, user_id, name, qualification, email, phone) VALUES
+ (1, 8, 'Dr. Ramesh', 'Ph.D.', 'ramesh@example.com', '9876543217'),
+ (2, 9, 'Prof. Suresh', 'M.Sc.', 'suresh@example.com', '9876543218'),
+ (3, 10, 'Dr. Kumar', 'Ph.D.', 'kumar@example.com', '9876543219'),
+ (4, 11, 'Prof. Verma', 'M.A.', 'verma@example.com', '9876543220'),
+ (5, 12, 'Dr. Sharma', 'Ph.D.', 'sharma@example.com', '9876543221'),
+ (6, 13, 'Prof. Jain', 'M.Sc.', 'jain@example.com', '9876543222'),
+ (7, 14, 'Dr. Gupta', 'Ph.D.', 'gupta@example.com', '9876543223');
+
+-- INSERT INTO courses
+INSERT INTO courses (name, start_date, end_date, price, exam_type) VALUES
+ ('JEE Master Course', '2024-01-01', '2024-06-30', 5000.00, 'MCQ'),
+ ('NEET Arjuna Course', '2024-02-01', '2024-07-31', 6000.00, 'Descriptive'),
+ ('UPSC Foundation Course', '2024-03-01', '2024-08-31', 7000.00, 'MCQ'),
+ ('NDA Shaurya Course', '2024-04-01', '2024-09-30', 8000.00, 'Descriptive'),
+ ('CA Foundation Course', '2024-05-01', '2024-10-31', 9000.00, 'MCQ'),
+ ('Physics Course', '2024-06-01', '2024-11-30', 4000.00, 'MCQ'),
+ ('Chemistry Course', '2024-07-01', '2024-12-31', 5500.00, 'Descriptive'),
+ ('Mathematics Course', '2024-08-01', '2025-01-31', 6000.00, 'MCQ'),
+ ('Biology Course', '2024-09-01', '2025-02-28', 7000.00, 'Descriptive'),
+ ('Computer Science Course', '2024-10-01', '2025-03-31', 8000.00, 'MCQ'),
+ ('English Course', '2024-11-01', '2025-04-30', 4000.00, 'Descriptive'),
+ ('Economics Course', '2025-01-01', '2025-06-30', 5500.00, 'MCQ');
+
+-- INSERT INTO enrollment
+INSERT INTO enrollment (id, course_name, enrollment_date, phone) VALUES
+ (1, 'Physics Course', '2024-01-05', '9876543210'),
+ (2, 'Chemistry Course', '2024-02-10', '9876543211'),
+ (3, 'Mathematics Course', '2024-03-15', '9876543212'),
+ (4, 'Biology Course', '2024-04-20', '9876543213'),
+ (5, 'Computer Science Course', '2024-05-25', '9876543214'),
+ (6, 'English Course', '2024-06-30', '9876543215'),
+ (7, 'Economics Course', '2024-07-05', '9876543216'),
+ (8, 'JEE Master Course', '2024-01-05', '9876543210'),
+ (9, 'NEET Arjuna Course', '2024-02-10', '9876543211'),
+ (10, 'UPSC Foundation Course', '2024-03-15', '9876543212'),
+ (11, 'NDA Shaurya Course', '2024-04-20', '9876543213'),
+ (12, 'CA Foundation Course', '2024-05-25', '9876543214');
+
+-- INSERT INTO tests
+INSERT INTO tests (name, duration, total_marks, course_name) VALUES
+ ('Physics Test 1', 60, 100, 'Physics Course'),
+ ('Chemistry Test 1', 90, 150, 'Chemistry Course'),
+ ('Mathematics Test 1', 60, 100, 'Mathematics Course'),
+ ('Biology Test 1', 90, 150, 'Biology Course'),
+ ('Computer Science Test 1', 60, 100, 'Computer Science Course'),
+ ('English Test 1', 90, 150, 'English Course'),
+ ('Economics Test 1', 60, 100, 'Economics Course'),
+ ('JEE Mock Test 1', 60, 100, 'JEE Master Course'),
+ ('NEET Mock Test 1', 90, 150, 'NEET Arjuna Course'),
+ ('UPSC Prelims Test', 60, 100, 'UPSC Foundation Course'),
+ ('NDA Written Test', 90, 150, 'NDA Shaurya Course'),
+ ('CA Foundation Test', 60, 100, 'CA Foundation Course');
+
+-- INSERT INTO questions
+INSERT INTO questions (id, description, type, marks, test_name) VALUES
+ (1, 'What is the speed of light?', 'MCQ', 2, 'Physics Test 1'),
+ (2, 'What is the chemical symbol for gold?', 'MCQ', 1, 'Chemistry Test 1'),
+ (3, 'Solve for x in 2x + 5 = 11', 'Descriptive', 5, 'Mathematics Test 1'),
+ (4, 'What is photosynthesis?', 'Descriptive', 10, 'Biology Test 1'),
+ (5, 'What is the time complexity of Bubble Sort?', 'MCQ', 3, 'Computer Science Test 1'),
+ (6, 'Who wrote Romeo and Juliet?', 'MCQ', 2, 'English Test 1'),
+ (7, 'What is the law of supply and demand?', 'Descriptive', 8, 'Economics Test 1'),
+ (8, 'What is the process of nuclear fission?', 'MCQ', 2, 'JEE Mock Test 1'),
+ (9, 'What is the role of ATP in cellular respiration?', 'Descriptive', 5, 'NEET Mock Test 1'),
+ (10, 'What is the concept of federalism in India?', 'MCQ', 1, 'UPSC Prelims Test'),
+ (11, 'What are the physical requirements for NDA?', 'Descriptive', 10, 'NDA Written Test'),
+ (12, 'What is the accounting equation?', 'MCQ', 3, 'CA Foundation Test');
+
+-- INSERT INTO answers (corrected for question ID 9)
+INSERT INTO answers (id, text, is_correct, question_id, phone) VALUES
+ (1, '299,792,458 m/s', TRUE, 1, '9876543210'),
+ (2, 'Au', TRUE, 2, '9876543211'),
+ (3, 'x = 3', TRUE, 3, '9876543212'),
+ (4, 'Process by which plants make food', TRUE, 4, '9876543213'),
+ (5, 'O(n^2)', TRUE, 5, '9876543214'),
+ (6, 'William Shakespeare', TRUE, 6, '9876543215'),
+ (7, 'When demand increases, supply decreases', FALSE, 7, '9876543216'),
+ (8, 'Nuclear fission splits atomic nuclei', TRUE, 8, '9876543210'),
+ (9, 'ATP is the cell energy currency', TRUE, 9, '9876543211'),
+ (10, 'Federalism divides central/local power', TRUE, 10, '9876543212'),
+ (11, 'NDA height: 157cm (male), 152cm (female)', TRUE, 11, '9876543213'),
+ (12, 'Assets = Liabilities + Equity', TRUE, 12, '9876543214');
+
+-- INSERT INTO subjects
+INSERT INTO subjects (name) VALUES
+ ('Physics'),
+ ('Chemistry'),
+ ('Mathematics'),
+ ('Biology'),
+ ('Computer Science'),
+ ('English'),
+ ('Economics'),
+ ('Polity'),
+ ('General Knowledge'),
+ ('Accounting');
+
+-- INSERT INTO lectures
+INSERT INTO lectures (name, duration, release_date, content, course_name) VALUES
+ ('Introduction to Physics', 30, '2024-01-01', 'Video', 'Physics Course'),
+ ('Introduction to Chemistry', 45, '2024-02-01', 'Video', 'Chemistry Course'),
+ ('Algebra Basics', 30, '2024-03-01', 'Video', 'Mathematics Course'),
+ ('Cell Biology', 45, '2024-04-01', 'Video', 'Biology Course'),
+ ('Intro to Programming', 30, '2024-05-01', 'Video', 'Computer Science Course'),
+ ('English Literature', 45, '2024-06-01', 'Video', 'English Course'),
+ ('Economic Principles', 30, '2024-07-01', 'Video', 'Economics Course'),
+ ('JEE Physics Fundamentals', 60, '2024-01-05', 'Video', 'JEE Master Course'),
+ ('NEET Biology Overview', 90, '2024-02-10', 'Video', 'NEET Arjuna Course'),
+ ('UPSC Polity Introduction', 60, '2024-03-15', 'Video', 'UPSC Foundation Course'),
+ ('NDA General Knowledge', 90, '2024-04-20', 'Video', 'NDA Shaurya Course'),
+ ('CA Accounting Basics', 60, '2024-05-25', 'Video', 'CA Foundation Course');
+
+-- INSERT INTO study_material
+INSERT INTO study_material (name, type, course_name, subject_name) VALUES
+ ('Physics Notes', 'PDF', 'Physics Course', 'Physics'),
+ ('Chemistry Handbook', 'Book', 'Chemistry Course', 'Chemistry'),
+ ('Mathematics Formulae', 'PDF', 'Mathematics Course', 'Mathematics'),
+ ('Biology Textbook', 'Book', 'Biology Course', 'Biology'),
+ ('Programming Guide', 'PDF', 'Computer Science Course', 'Computer Science'),
+ ('English Grammar Book', 'Book', 'English Course', 'English'),
+ ('Economics Study Guide', 'PDF', 'Economics Course', 'Economics'),
+ ('JEE Physics Study Guide', 'PDF', 'JEE Master Course', 'Physics'),
+ ('NEET Biology Study Guide', 'Book', 'NEET Arjuna Course', 'Biology'),
+ ('UPSC Polity Notes', 'PDF', 'UPSC Foundation Course', 'Polity'),
+ ('NDA General Knowledge Handbook', 'Book', 'NDA Shaurya Course', 'General Knowledge'),
+ ('CA Accounting Handbook', 'PDF', 'CA Foundation Course', 'Accounting');
+
+-- INSERT INTO doubt_panel
+INSERT INTO doubt_panel (id, phone_no, course_name, subject_name, question_id) VALUES
+ (1, '9876543210', 'Physics Course', 'Physics', 1),
+ (2, '9876543211', 'Chemistry Course', 'Chemistry', 2),
+ (3, '9876543212', 'Mathematics Course', 'Mathematics', 3),
+ (4, '9876543213', 'Biology Course', 'Biology', 4),
+ (5, '9876543214', 'Computer Science Course', 'Computer Science', 5),
+ (6, '9876543215', 'English Course', 'English', 6),
+ (7, '9876543216', 'Economics Course', 'Economics', 7),
+ (8, '9876543210', 'JEE Master Course', 'Physics', 8),
+ (9, '9876543211', 'NEET Arjuna Course', 'Biology', 9),
+ (10, '9876543212', 'UPSC Foundation Course', 'Polity', 10),
+ (11, '9876543213', 'NDA Shaurya Course', 'General Knowledge', 11),
+ (12, '9876543214', 'CA Foundation Course', 'Accounting', 12);
+
+-- INSERT INTO course_faculty
+INSERT INTO course_faculty (course_name, faculty_id) VALUES
+ ('Physics Course', 1),
+ ('Chemistry Course', 2),
+ ('Mathematics Course', 3),
+ ('Biology Course', 4),
+ ('Computer Science Course', 5),
+ ('English Course', 6),
+ ('Economics Course', 7),
+ ('JEE Master Course', 1),
+ ('NEET Arjuna Course', 2),
+ ('UPSC Foundation Course', 3),
+ ('NDA Shaurya Course', 4),
+ ('CA Foundation Course', 5);
+
+-- INSERT INTO course_subject
+INSERT INTO course_subject (subject_name, course_name) VALUES
+ ('Physics', 'Physics Course'),
+ ('Chemistry', 'Chemistry Course'),
+ ('Mathematics', 'Mathematics Course'),
+ ('Biology', 'Biology Course'),
+ ('Computer Science', 'Computer Science Course'),
+ ('English', 'English Course'),
+ ('Economics', 'Economics Course'),
+ ('Physics', 'JEE Master Course'),
+ ('Biology', 'NEET Arjuna Course'),
+ ('Polity', 'UPSC Foundation Course'),
+ ('General Knowledge', 'NDA Shaurya Course'),
+ ('Accounting', 'CA Foundation Course');
